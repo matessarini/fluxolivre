@@ -15,11 +15,11 @@ flutter --version
 ## 🚀 Clonando o Repositório
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/Unity0001/BrickBreaker
+   git clone https://github.com/Unity0001/Fluxo_Livre
    ```
 2. Acesse a pasta do projeto:
    ```sh
-   cd BrickBreaker
+   cd Fluxo_Livre
    ```
 
 ## 📦 Instalando Dependências
