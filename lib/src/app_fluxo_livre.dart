@@ -1,6 +1,6 @@
 import 'package:app_fluxolivrep/src/pages/home_page.dart';
 import 'package:app_fluxolivrep/src/pages/login_page.dart';
-import 'package:app_fluxolivrep/src/pages/register.dart';
+import 'package:app_fluxolivrep/src/pages/register_page.dart';
 import 'package:flutter/material.dart';
 
 class AppFluxolivre extends StatelessWidget {
@@ -12,9 +12,9 @@ class AppFluxolivre extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'AppFluxoLivre',
       routes: {
-        '/' : (_) => RegisterPage(),
+        '/register' : (_) => RegisterPage(),
         '/home' : (_) => HomePage(),
-        '/register' : (_) => LoginPage(),
+        '/' : (_) => LoginPage(),
       },
     );
   }

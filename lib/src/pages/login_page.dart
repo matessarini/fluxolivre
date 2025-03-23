@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/img_fundo.png'),
+            image: AssetImage('assets/images/blue.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -25,6 +25,9 @@ class LoginPage extends StatelessWidget {
                 width: 200,
                 child: Image(image: AssetImage('assets/images/et.png')),
               ),
+              const SizedBox(height: 30),
+              Text('Login',
+                style: TextStyle(color: Color(0xFFAFAE24), fontSize: 24, fontWeight: FontWeight.w500)),
               const SizedBox(height: 30),
               InputWidget(icon: Icons.person_outline, hint: 'Usuário'),
               InputWidget(
@@ -42,7 +45,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.of(context).pushNamed('/login');
                 },
                 child: const Text(
                   'Acessar',
@@ -56,7 +59,7 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamed('/home');
+                  Navigator.of(context).pushNamed('/register');
                 },
                 child: const Text(
                   'Novo Usuário',

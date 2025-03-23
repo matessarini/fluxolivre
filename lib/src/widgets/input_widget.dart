@@ -19,14 +19,14 @@ class InputWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var inputFormatters = <TextInputFormatter>[];
-    if (!obscure) {
+    if (hint.toLowerCase().contains('cpf')) {
       inputFormatters.add(MaskTextInputFormatter(mask: '###.###.###-##'));
-    } else {
+    } else if (inputType == TextInputType.number) {
       inputFormatters.add(FilteringTextInputFormatter.digitsOnly);
     }
     return TextField(
       keyboardType: inputType,
-      inputFormatters: inputFormatters,
+      inputFormatters: inputFormatters.isNotEmpty ? inputFormatters : null,
       decoration: InputDecoration(
         icon: Icon(icon, color: Color(0xFFFFFFFF)),
         hintText: hint,
