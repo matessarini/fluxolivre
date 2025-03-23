@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(26.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 200,
@@ -26,16 +26,19 @@ class LoginPage extends StatelessWidget {
                 child: Image(image: AssetImage('assets/images/et.png')),
               ),
               const SizedBox(height: 30),
+              Text('FLUXO LIVRE',
+                style: TextStyle(color: Color.fromARGB(255, 217, 217, 4), fontSize: 30, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 16),
               Text('Login',
-                style: TextStyle(color: Color(0xFFAFAE24), fontSize: 24, fontWeight: FontWeight.w500)),
-              const SizedBox(height: 30),
+                style: TextStyle(color: Color(0xFFAFAE24), fontSize: 22, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 50),
               InputWidget(icon: Icons.person_outline, hint: 'Usuário'),
               InputWidget(
                 icon: Icons.lock_outline,
-                hint: 'Password',
+                hint: 'Senha',
                 obscure: true,
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 60),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFAFAE24),
@@ -45,26 +48,39 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/login');
+                  Navigator.of(context).pushNamed('/home');
                 },
                 child: const Text(
                   'Acessar',
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF031C5F),
+                    fontWeight: FontWeight.w600,
+                    color: Color.fromARGB(255, 2, 14, 49),
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('/register');
-                },
-                child: const Text(
-                  'Novo Usuário',
-                  style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 20),
-                ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Novo Usuário?',
+                    style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/register');
+                    },
+                    child: const Text(
+                      'Cadastre-se',
+                      style: TextStyle(
+                        color: Color(0xFFAFAE24),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

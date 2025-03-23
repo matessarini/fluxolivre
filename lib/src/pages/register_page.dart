@@ -23,16 +23,19 @@ class _RegisterPageState extends State<RegisterPage> {
         child: Padding(
           padding: const EdgeInsets.all(26.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start, // Alinha os widgets no topo
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 150,
                 width: 150,
                 child: Image(image: AssetImage('assets/images/et.png')),
               ),
-              const SizedBox(height: 30),
-              Text('Cadastro', 
-              style: TextStyle(color: Color(0xFFAFAE24), fontSize: 24, fontWeight: FontWeight.w500)),
+              const SizedBox(height: 20),
+              Text('FLUXO LIVRE',
+                style: TextStyle(color: Color.fromARGB(255, 217, 217, 4), fontSize: 30, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 16),
+              Text('Cadastro',
+                style: TextStyle(color: Color(0xFFAFAE24), fontSize: 22, fontWeight: FontWeight.bold)),
               const SizedBox(height: 30),
               InputWidget(icon: Icons.person, hint: 'Nome'),
               InputWidget(icon: Icons.email, hint: 'Email'),
@@ -43,26 +46,49 @@ class _RegisterPageState extends State<RegisterPage> {
                 obscure: true,
               ),
               InputWidget(icon: Icons.lock_outline, hint: 'Confirmar senha', obscure: true,),
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFAFAE24),
-                  minimumSize: Size(double.infinity, 60),
+                  minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/login');
+                  Navigator.of(context).pushNamed('/home');
                 },
                 child: const Text(
-                  'Acessar',
+                  'Cadastrar',
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF031C5F),
+                    fontWeight: FontWeight.w600,
+                    color: Color.fromARGB(255, 2, 14, 49),
                   ),
                 ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Já tem conta?',
+                    style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/'); // Corrigido para usar pushReplacementNamed
+                    },
+                    child: const Text(
+                      'Entrar',
+                      style: TextStyle(
+                        color: Color(0xFFAFAE24),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
