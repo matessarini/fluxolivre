@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Como Clonar e Rodar este Projeto Flutter
 
 ## 📥 Pré-requisitos
@@ -37,3 +38,6 @@ flutter pub get
    ```sh
    flutter run
    ```
+=======
+# fluxolivre
+>>>>>>> fba1a293b493cc27637088daac157b31467366c6
