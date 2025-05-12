@@ -1,3 +1,4 @@
+import 'package:app_fluxo_livre/src/pages/users_page.dart';
 import 'package:flutter/material.dart';
 
 class AdminPage extends StatelessWidget {
@@ -23,6 +24,12 @@ class AdminPage extends StatelessWidget {
               context,
               'Usuários',
               Icons.people,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const UsersPage()),
+                );
+              },
             ),
             _buildGridItem(
               context,
@@ -40,35 +47,39 @@ class AdminPage extends StatelessWidget {
     );
   }
 
-  Widget _buildGridItem(BuildContext context, String title, IconData icon) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12.0),
-      child: Container(
-        color: Colors.black54,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Icon(
-                icon,
-                size: 40.0,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              color: Colors.black.withOpacity(0.7),
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: const TextStyle(
+  Widget _buildGridItem(BuildContext context, String title, IconData icon,
+      {VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12.0),
+        child: Container(
+          color: Colors.black54,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Icon(
+                  icon,
+                  size: 80.0,
                   color: Colors.white,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              Container(
+                color: Colors.black.withOpacity(0.7),
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:app_fluxo_livre/src/pages/admin_page.dart';
 import 'package:app_fluxo_livre/src/pages/cad_usuario_page.dart';
 import 'package:app_fluxo_livre/src/pages/home_page.dart';
 import 'package:app_fluxo_livre/src/pages/login_page.dart';
+import 'package:app_fluxo_livre/src/pages/users_page.dart';
 import 'package:app_fluxo_livre/src/providers/auth_provider.dart';
 import 'package:app_fluxo_livre/src/providers/user_register_provider.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class AppFluxolivre extends StatelessWidget {
           '/home':(_)=> HomePage(),
           '/novousuario': (_) => CadUsuarioPage(),
           '/admin': (_) => AdminPage(),
+          '/users': (_) => UsersPage(),
         },
       ),
     );

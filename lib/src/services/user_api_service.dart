@@ -5,15 +5,27 @@ import 'package:http/http.dart' as http;
 
 class UserApiService {
   static const String baseUrl = Constants.baseUrl;
-  static Future<http.Response> registerUser(User user) async{
+
+  static Future<http.Response> registerUser(User user) async {
     final url = Uri.parse('$baseUrl/user');
     final response = await http.post(
       url,
       headers: {
         'Content-Type': 'application/json',
       },
-      body: jsonEncode(user.toJson())
+      body: jsonEncode(user.toJson()),
     );
     return response;
+  }
+
+  static Future<List<User>> fetchUsers() async {
+    final url = Uri.parse('$baseUrl/user');
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final List<dynamic> data = jsonDecode(response.body);
+      return data.map((json) => User.fromJson(json)).toList();
+    } else {
+      throw Exception('Erro ao buscar usuários');
+    }
   }
 }
